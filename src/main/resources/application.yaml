@@ -1,0 +1,33 @@
+server:
+  error:
+    include-message: always
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/jwt
+    username:
+    password:
+
+  jpa:
+    show-sql: true
+    open-in-view: false
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      jakarta:
+        persistence:
+          sharedCache:
+            mode: UNSPECIFIED
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    hibernate:
+      ddl-auto: validate
+
+zouba:
+  jwt:
+    secret: encryption token string
+    access-expiry: 15
+    refresh-expiry: 30
+
